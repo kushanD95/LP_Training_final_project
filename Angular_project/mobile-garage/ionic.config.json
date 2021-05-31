@@ -1,0 +1,7 @@
+{
+  "name": "mobile-garage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

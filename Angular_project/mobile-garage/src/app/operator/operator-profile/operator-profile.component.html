@@ -1,0 +1,61 @@
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container" id="container" style="color: black;">
+    <div id="img-div"><img class="prof-image" src="assets/shapes.svg" /></div>
+    <input type="file" (change)="onImageChange($event)" accept="image/*" />
+
+    <table class="table table-striped" scrollY="true">
+      <tbody>
+        <tr>
+          <td> First Name:</td>
+          <td>
+            <input class="form-control" name="fname" [disabled]='isDisableFname' [(ngModel)]="name" />
+          </td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('fname')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input class="form-control" name="lname" [disabled]='isDisableLname' [(ngModel)]="lname" />
+          </td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('lname')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>NIC:</td>
+          <td><input class="form-control" name="nic" [disabled]='isDisableNic' [(ngModel)]="nic" /></td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('nic')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input class="form-control" name="email" [disabled]='isDisableEmail' [(ngModel)]="email" />
+          </td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('email')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Telephone No:</td>
+          <td><input class="form-control" name="tp" [disabled]='isDisableTp' [(ngModel)]="tp" /></td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('tp')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Uasrname:</td>
+          <td colspan="2">username</td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="btn-update" class="btn btn-outline-primary btn-small" [disabled]="isNotChangeData">Update
+      Profile</button>
+  </div>
+</ion-content>

@@ -1,0 +1,100 @@
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container" id="container" style="color: black;">\
+    <img [src]="imagePreview" />
+    <input type="file" (change)="onImageChange($event)" accept="image/*" />
+
+    <table class="table table-striped" scrollY="true">
+      <tbody>
+        <tr>
+          <td> First Name:</td>
+          <td>
+            <input class="form-control" name="fname" [disabled]='isDisableFname' [(ngModel)]="name" />
+          </td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('fname')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input class="form-control" name="lname" [disabled]='isDisableLname' [(ngModel)]="lname" />
+          </td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('lname')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>NIC:</td>
+          <td><input class="form-control" name="nic" [disabled]='isDisableNic' [(ngModel)]="nic" /></td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('nic')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input class="form-control" name="email" [disabled]='isDisableEmail' [(ngModel)]="email" />
+          </td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('email')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Telephone No:</td>
+          <td><input class="form-control" name="tp" [disabled]='isDisableTp' [(ngModel)]="tp" /></td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('tp')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Uasrname:</td>
+          <td colspan="2">username</td>
+        </tr>
+        <tr>
+          <td>Licence No:</td>
+          <td><input class="form-control" name="tp" [disabled]='isDisableLicenceNo' [(ngModel)]="licenceNo" /></td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('licenceNo')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Home Town:</td>
+          <td><input class="form-control" name="homeTown" [disabled]='isDisableHomeTown' [(ngModel)]="homeTown" /></td>
+          <td>
+            <ion-icon name="git-compare" (click)="changeDetails('homeTown')"></ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>Vehicles:</td>
+          <td colspan="2">
+            <div class="card" *ngFor="let vehicle of vehicles">
+              <div class="card-body" id="vehicle-card">
+                <ion-row>
+                  <ion-col size="5" class="vehicle-no"><b>Vehicle No:</b></ion-col>
+                  <ion-col size="7" class="vehicle-no"> {{ vehicle.vehicleNo }} </ion-col>
+                </ion-row>
+                <hr />
+                <ion-row>
+                  <ion-col size="6"><b>Registerd District:</b></ion-col>
+                  <ion-col size="6">{{ vehicle.registeredDistrict }} </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col size="3"><b>Type:</b></ion-col>
+                  <ion-col size="3">{{ vehicle.type }}</ion-col>
+                  <ion-col size="3"><b>Model:</b></ion-col>
+                  <ion-col size="3">{{ vehicle.model }}</ion-col>
+                </ion-row>
+                <ion-icon name="close-circle" class="btn-remove-vehicle"></ion-icon>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="btn-update" class="btn btn-outline-primary btn-small" [disabled]="isNotChangeData">Update
+      Profile</button>
+  </div>
+</ion-content>

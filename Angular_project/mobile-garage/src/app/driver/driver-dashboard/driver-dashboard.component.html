@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container" class="container" style="color: black;">
+    <div class="dashboard-body">
+      <h1 class="welcome">Welcome!</h1>
+      <p class="welcome-note">Hi sanuka, welcome to the <b>Mobile Garage</b> application to used to solve your vehicle
+        problems.</p>
+      <ion-col size="6">
+        <ion-card routerLink='/driver/addtask'>
+          <ion-card-header class="card-header">
+            Add New Task
+          </ion-card-header>
+          <ion-card-body>Click here to add new Task.</ion-card-body>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card routerLink='/driver/mytask'>
+          <ion-card-header class="card-header">
+            My Tasks
+          </ion-card-header>
+          <ion-card-body>Click here to see your Tasks rised now</ion-card-body>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card routerLink='/driver/profile'>
+          <ion-card-header class="card-header">
+            Profile
+          </ion-card-header>
+          <ion-card-body>Click here to visit your Profile</ion-card-body>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card routerLink='/driver/report'>
+          <ion-card-header class="card-header">
+            Report Operators
+          </ion-card-header>
+          <ion-card-body>Click here to Report Operators of your completed tasks</ion-card-body>
+        </ion-card>
+      </ion-col>
+    </div>
+  </div>
+</ion-content>

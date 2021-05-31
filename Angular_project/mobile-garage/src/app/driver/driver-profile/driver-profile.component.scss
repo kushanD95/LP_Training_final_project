@@ -1,0 +1,44 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+  }
+  
+  #container {
+    padding-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  #vehicle-card {
+    font-size: xx-small;
+  }
+  
+  .vehicle-no {
+    font-size: x-small;
+  }
+  
+  .btn-remove-vehicle {
+    color: red;
+    float: right;
+    font-size: medium;
+  }
+  
+  #btn-update{
+    float: right;
+    margin: 0 0 1rem 0;
+  }
