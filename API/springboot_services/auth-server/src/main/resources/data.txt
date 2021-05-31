@@ -1,0 +1,160 @@
+INSERT INTO oauth_client_details (  client_id,
+                                    client_secret,
+                                    web_server_redirect_uri,
+                                    scope,
+                                    access_token_validity,
+                                    refresh_token_validity,
+                                    resource_ids,
+                                    authorized_grant_types,
+                                    additional_information)
+
+                                    VALUES (
+                                   'mobile',
+                                   '{bcrypt}$2a$10$a7EHJTNUoW0Y1iHSQ.Ej2eat3vu/1KUmB5pY.BDT5BScLcRKFfxjO',
+                                   'http://localhost:8080/code',
+                                   'READ,WRITE',
+                                   '3600',
+                                   '10000',
+                                   'inventory,payment',
+                                   'authorization_code,password,refresh_token,implicit',
+                                   '{}');
+
+/*______________________________________________________________________________________________________________________*/
+
+/* secret - pin*/
+
+/*______________________________________________________________________________________________________________________*/
+
+INSERT INTO PERMISSION (NAME) VALUES
+ ('create_profile'),
+ ('read_profile'),
+ ('update_profile'),
+ ('delete_profile'),
+ ('add_task'),
+ ('remove_task'),
+ ('confirm_task'),
+ ('report_operator'),
+ ('rate_operator');
+
+/*______________________________________________________________________________________________________________________*/
+
+ INSERT INTO role (NAME) VALUES
+		('ROLE_admin'),
+		('ROLE_operator'),
+		('ROLE_driver');
+
+/*______________________________________________________________________________________________________________________*/
+
+INSERT INTO PERMISSION_ROLE (PERMISSION_ID, ROLE_ID) VALUES
+     (1,1), /*create_profile admin */
+     (2,1), /* read_profile admin */
+     (3,1), /* update_profile admin */
+     (4,1), /* delete_profile admin */
+     (5,1), /* add_task admin */
+     (6,1), /* remove_task admin */
+     (7,1), /* confirm_task admin */
+     (8,1), /* report_operator admin */
+     (9,1), /* rate_operator admin */
+     (1,2), /*create_profile operator */
+     (2,2), /* read_profile operator */
+     (3,2), /* update_profile operator */
+     (4,2), /* delete_profile operator */
+     (7,2), /* confirm_task operator */
+     (1,3), /*create_profile driver */
+     (2,3), /* read_profile driver */
+     (3,3), /* update_profile driver */
+     (4,3), /* delete_profile driver */
+     (5,3), /* add_task driver */
+     (6,3), /* remove_task driver */
+     (8,3), /* report_operator driver */
+     (9,3); /* rate_operator driver */
+
+/*______________________________________________________________________________________________________________________*/
+
+insert into user (id,
+                username,
+                password,
+                email,
+                fname,
+                lname,
+                nic,
+                telephoneNo,
+                enabled,
+                accountNonExpired,
+                credentialsNonExpired,
+                accountNonLocked)
+
+                VALUES ('1',
+                        'sanuka',
+                        '{bcrypt}$2a$10$6gUkxlPTjsVur1d3jhAxsuOWqAfeGqw/f2f7JQ63wi8B0ErJjrm22',
+                        'k@sanuka.com',
+                        'sanuka',
+                        'dayarathne',
+                        '123456789v',
+                        '0123456789',
+                        '1',
+                        '1',
+                        '1',
+                        '1');
+
+ insert into  user (id,
+                    username,
+                    password,
+                    email,
+                    fname,
+                    lname,
+                    nic,
+                    telephoneNo,
+                    enabled,
+                    accountNonExpired,
+                    credentialsNonExpired,
+                    accountNonLocked)
+
+                    VALUES ('2',
+                            'kushan',
+                            '{bcrypt}$2a$10$SZqdosGZ/mXdiafoHy64DuU9rCOAtDJC26WkNZ/5HJuIq4ulcQmj6',
+                            'k@kushan.com',
+                            'kushan',
+                            'gunarathne',
+                            '987654321v',
+                            '09876564321',
+                            '1',
+                            '1',
+                            '1',
+                            '1');
+
+insert into  user (id,
+                    username,
+                    password,
+                    email,
+                    fname,
+                    lname,
+                    nic,
+                    telephoneNo,
+                    enabled,
+                    accountNonExpired,
+                    credentialsNonExpired,
+                    accountNonLocked)
+
+                    VALUES ('3',
+                            'yasa',
+                            '{bcrypt}$2a$10$WXMqED3P0M4/CvadaxH.HeX/JOQybS7WeFdKf2JUgBdpHuq9HDbQ.',
+                            'y@yasa.com',
+                            'yasa',
+                            'shashi',
+                            '456789132v',
+                            '0456789132',
+                            '1',
+                            '1',
+                            '1',
+                            '1');
+/*
+    * kushan - pkushan
+    * sanuka - psanuka
+    * yasa   - pyasa
+*/
+INSERT INTO ROLE_USER (ROLE_ID, USER_ID)
+    VALUES
+    (1, 1) /* sanuka - admin */,
+    (2, 2) /* kushan - operator */,
+    (3, 3) /* yasa   - driver*/;
