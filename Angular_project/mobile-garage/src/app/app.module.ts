@@ -32,7 +32,7 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
     BrowserAnimationsModule,
     MaterialModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA-FJ-a9wWCzDlX9K7HXqR9KGObaU0fYGA'
+      apiKey:
     }),
   ],
   exports: [

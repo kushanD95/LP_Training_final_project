@@ -40,7 +40,7 @@ import { ReportOparatorComponent } from './report-oparator/report-oparator.compo
     MatCardModule,
     Ng2ImgMaxModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA-FJ-a9wWCzDlX9K7HXqR9KGObaU0fYGA'
+      apiKey:
     }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
